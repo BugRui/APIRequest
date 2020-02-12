@@ -30,10 +30,14 @@ APIRequest.init(this, APIService.BASE_URL) {
                 addNetworkInterceptor(HttpLoggingInterceptor().apply {
                     level = HttpLoggingInterceptor.Level.BODY
                 })
+
             }
             retrofit {
                 addConverterFactory(GsonConverterFactory.create(Gson()))
             }
+
+            //添加请求头
+            addHeader("k","v")
         }
         
 //Java
