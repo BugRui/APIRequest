@@ -24,7 +24,7 @@ implementation 'com.github.BugRui:APIRequest:1.0.0'
 
 //kotlin
 APIRequest.init(this, APIService.BASE_URL) {
-            okHttp {
+            okHttp { //okHttpBuilder 
                 cache(Cache(this@MainActivity.cacheDir, 10 * 1024 * 1024L))
                 //日志
                 addNetworkInterceptor(HttpLoggingInterceptor().apply {
@@ -32,12 +32,12 @@ APIRequest.init(this, APIService.BASE_URL) {
                 })
 
             }
-            retrofit {
+            retrofit { //retrofitBuilder 
                 addConverterFactory(GsonConverterFactory.create(Gson()))
             }
 
             //添加请求头
-            addHeader("k","v")
+            addHeader("key","value")
         }
         
 //Java
@@ -59,6 +59,10 @@ APIRequest.init(this, APIService.BASE_URL) {
                         return builder;
                     }
                 });
+
+                //添加请求头
+                requestWrapper.addHeader("key","value");
+
                 return Unit.INSTANCE;
             }
         });
