@@ -64,6 +64,20 @@ APIRequest.init(this, APIService.BASE_URL) {
 ## 食用,具体请看Dome
 
 ```
+
+interface APIService {
+    companion object {
+        const val BASE_URL = "http://gank.io/"
+    }
+    @GET("api/data/福利/20/{page}")
+    fun getData(@Path("page") page: Int): Call<Gank>
+}
+
+```
+
+
+
+```
 //Kotlin
  APIRequest.create(APIService::class.java)
                 .getData(0)
