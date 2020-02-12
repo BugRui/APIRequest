@@ -1,6 +1,6 @@
 # APIRequest
 
-API网络请求框架，基于封装Retrofit+OkHttp封装，集成简单，方便快捷食用。
+API网络请求框架，基于封装Retrofit+OkHttp封装，集成简单，方便快捷食用，支持Java，Kotlin。
 
 ### 集成
 #### Step 1. Add the JitPack repository to your build file
