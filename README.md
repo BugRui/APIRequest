@@ -15,7 +15,7 @@ allprojects {
 ```
 ####  Step 2. Add the dependency
 ```
-implementation 'com.github.BugRui:APIRequest:1.0.0'
+implementation 'com.github.BugRui:APIRequest:1.0.1'
 ```
 
 ## 在Application中初始化,根据自己需求自己配置
