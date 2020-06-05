@@ -1,7 +1,7 @@
 package com.bugrui.apirequestapplication.api
 
+import androidx.lifecycle.LiveData
 import com.bugrui.apirequestapplication.data.Gank
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -14,6 +14,7 @@ interface APIService {
     companion object {
         const val BASE_URL = "http://gank.io/"
     }
+
     @GET("api/data/福利/20/{page}")
-    fun getData(@Path("page") page: Int): Call<Gank>
+    fun getData(@Path("page") page: Int): LiveData<ApiResponse<List<Gank>?>>
 }
