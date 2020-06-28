@@ -18,9 +18,21 @@ allprojects {
 implementation 'com.github.BugRui:APIRequest:1.0.1'
 ```
 
+####  Step 3. Java1.8
+```
+
+compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+```
+
+
 ## 在Application中初始化,根据自己需求自己配置
 
 ```
+
 
 //kotlin
 APIRequest.init(this, APIService.BASE_URL) {
