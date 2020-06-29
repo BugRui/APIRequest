@@ -26,7 +26,7 @@ public class JavaApp extends Application {
         super.onCreate();
         sApp = this;
         //初始化
-        APIRequest.INSTANCE.init(this, APIService.BASE_URL, new Function1<RequestWrapper, Unit>() {
+        APIRequest.Companion.init(this, APIService.BASE_URL, new Function1<RequestWrapper, Unit>() {
             @Override
             public Unit invoke(RequestWrapper requestWrapper) {
                 requestWrapper.okHttp(new Function2<OkHttpClient.Builder, OkHttpClient.Builder, OkHttpClient.Builder>() {

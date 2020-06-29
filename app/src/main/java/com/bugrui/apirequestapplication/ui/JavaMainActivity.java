@@ -81,7 +81,7 @@ public class JavaMainActivity extends AppCompatActivity implements OnRefreshLoad
         getList(true);
     }
 
-    private APIService apiService = APIRequest.INSTANCE.create(APIService.class);
+    private APIService apiService = APIRequest.Companion.create(APIService.class);
 
     private void getList(boolean isRefresh) {
         int page;
