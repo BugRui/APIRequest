@@ -15,7 +15,7 @@ allprojects {
 ```
 ####  Step 2. Add the dependency
 ```
-implementation 'com.github.BugRui:APIRequest:1.0.1'
+implementation 'com.github.BugRui:APIRequest:1.0.2'
 ```
 
 ####  Step 3. Java1.8
@@ -53,7 +53,7 @@ APIRequest.init(this, APIService.BASE_URL) {
         }
         
 //Java
- APIRequest.INSTANCE.init(this, APIService.BASE_URL, new Function1<RequestWrapper, Unit>() {
+ APIRequest.Companion.init(this, APIService.BASE_URL, new Function1<RequestWrapper, Unit>() {
             @Override
             public Unit invoke(RequestWrapper requestWrapper) {
                 requestWrapper.okHttp(new Function2<OkHttpClient.Builder, OkHttpClient.Builder, OkHttpClient.Builder>() {
@@ -81,7 +81,7 @@ APIRequest.init(this, APIService.BASE_URL) {
 
 ```
 
-## 食用,具体请看Dome
+## 使用,具体请看Dome
 
 ```
 
@@ -112,7 +112,7 @@ interface APIService {
                 })
                 
 //Java         
- APIRequest.INSTANCE.create(APIService.class)
+ APIRequest.Companion.create(APIService.class)
                         .getData(0)
                         .enqueue(new Callback<Gank>() {
                             @Override
